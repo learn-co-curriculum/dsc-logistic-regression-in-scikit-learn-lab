@@ -3,13 +3,14 @@
 
 ## Introduction 
 
-In this lab, we are going to fit a logistic regression model to a dataset concerning heart disease. Whether or not a patient has heart disease is indicated in the final column labelled 'target'. 1 is for positive for heart disease while 0 indicates no heart disease.
+In this lab, you are going to fit a logistic regression model to a dataset concerning heart disease. Whether or not a patient has heart disease is indicated in the final column labeled 'target'. 1 is for positive for heart disease while 0 indicates no heart disease.
 
 ## Objectives
 You will be able to:
 
-* Understand and implement logistic regression
-* Compare testing and training errors
+* Implement logistic regression in sci-kit learn
+* Form conclusions about the performance of a model
+
 
 ## Let's get started!
 
@@ -184,7 +185,7 @@ Split the data into train and test sets.
 ```
 
 ## Fit a model
-Fit an intial model to the training set. In SciKit Learn you do this by first creating an instance of the regression class. From there, then use the **fit** method from your class instance to fit a model to the training data.
+Fit an initial model to the training set. In sci-kit learn you do this by first creating an instance of the regression class. From there, then use the fit method from your class instance to fit a model to the training data.
 
 
 ```python
@@ -216,7 +217,7 @@ How many times was the classifier correct for the training set?
 ```
 
 ## Analysis
-Describe how well you think this initial model is based on the train and test performance. Within your description, make note of how you evaluated perforamnce as compared to our previous work with regression.
+Describe how well you think this initial model is performing based on the train and test performance. Within your description, make note of how you evaluated performance as compared to your previous work with regression.
 
 
 ```python
@@ -225,4 +226,4 @@ Describe how well you think this initial model is based on the train and test pe
 
 ## Summary
 
-In this lab, you practiced a standard data science pipeline, importing data, splitting into train and test sets and fitting a logistic regression model. In the upcoming labs and lessons, we'll continue to investigate how to analyze and tune these models for various scenarios.
+In this lab, you practiced a standard data science pipeline: importing data, splitting into train and test sets, and fitting a logistic regression model. In the upcoming labs and lessons, you'll continue to investigate how to analyze and tune these models for various scenarios.
