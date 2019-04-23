@@ -1,15 +1,15 @@
 
-# Logistic Regression in SciKit Learn - Lab
+# Logistic Regression in sci-kit learn - Lab
 
 ## Introduction 
 
-In this lab, we are going to fit a logistic regression model to a dataset concerning heart disease. Whether or not a patient has heart disease is indicated in the final column labelled 'target'. 1 is for positive for heart disease while 0 indicates no heart disease.
+In this lab, you are going to fit a logistic regression model to a dataset concerning heart disease. Whether or not a patient has heart disease is indicated in the final column labeled 'target'. 1 is for positive for heart disease while 0 indicates no heart disease.
 
 ## Objectives
 You will be able to:
 
-* Understand and implement logistic regression
-* Compare testing and training errors
+* Implement logistic regression in sci-kit learn
+* Form conclusions about the performance of a model 
 
 ## Let's get started!
 
@@ -172,9 +172,8 @@ Normalize the data prior to fitting the model.
 
 
 ```python
-for col in df.columns:
-    df[col] = (df[col]-min(df[col]))/ (max(df[col]) - min(df[col]))
-df.head()
+X = X.apply(lambda x : (x - x.min()) /(x.max() - x.min()),axis=0)
+X.head()
 ```
 
 
@@ -211,7 +210,6 @@ df.head()
       <th>slope</th>
       <th>ca</th>
       <th>thal</th>
-      <th>target</th>
     </tr>
   </thead>
   <tbody>
@@ -230,7 +228,6 @@ df.head()
       <td>0.0</td>
       <td>0.0</td>
       <td>0.333333</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -247,7 +244,6 @@ df.head()
       <td>0.0</td>
       <td>0.0</td>
       <td>0.666667</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -264,7 +260,6 @@ df.head()
       <td>1.0</td>
       <td>0.0</td>
       <td>0.666667</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <th>3</th>
@@ -281,7 +276,6 @@ df.head()
       <td>1.0</td>
       <td>0.0</td>
       <td>0.666667</td>
-      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -298,7 +292,6 @@ df.head()
       <td>1.0</td>
       <td>0.0</td>
       <td>0.666667</td>
-      <td>1.0</td>
     </tr>
   </tbody>
 </table>
@@ -360,12 +353,12 @@ print(pd.Series(residuals).value_counts(normalize=True))
 ```
 
      0    194
-    -1     21
-     1     12
+    -1     20
+     1     13
     Name: target, dtype: int64
      0    0.854626
-    -1    0.092511
-     1    0.052863
+    -1    0.088106
+     1    0.057269
     Name: target, dtype: float64
 
 
@@ -380,21 +373,21 @@ print(pd.Series(residuals).value_counts(normalize=True))
 #63 correct, 83% accuracy
 ```
 
-     0    63
+     0    62
     -1     9
-     1     4
+     1     5
     Name: target, dtype: int64
-     0    0.828947
+     0    0.815789
     -1    0.118421
-     1    0.052632
+     1    0.065789
     Name: target, dtype: float64
 
 
 ## Analysis
-Describe how well you think this initial model is based on the train and test performance. Within your description, make note of how you evaluated perforamnce as compared to our previous work with regression.
+Describe how well you think this initial model is performing based on the train and test performance. Within your description, make note of how you evaluated performance as compared to your previous work with regression.
 
-Answers will vary. Students should generally be grappling with the notion of True Positives, False Positives, True Negatives, and False Negatives that were introduced previously. Hopefully they will be able to at least check the number of correct/incorrect predictions at this point.
+Answers will vary. In this instance, our model has 85% accuracy on the train set and 83% on the test set. You can also see that our model has a reasonably even number of False Positives and False Negatives, with slightly more False Positives for both the training and testing validations.
 
 ## Summary
 
-In this lab, you practiced a standard data science pipeline, importing data, splitting into train and test sets and fitting a logistic regression model. In the upcoming labs and lessons, we'll continue to investigate how to analyze and tune these models for various scenarios.
+In this lab, you practiced a standard data science pipeline: importing data, splitting into train and test sets, and fitting a logistic regression model. In the upcoming labs and lessons, you'll continue to investigate how to analyze and tune these models for various scenarios.
