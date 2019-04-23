@@ -310,7 +310,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 ```
 
 ## Fit a model
-Fit an intial model to the training set. In SciKit Learn you do this by first creating an instance of the regression class. From there, then use the **fit** method from your class instance to fit a model to the training data.
+Fit an initial model to the training set. In sci-kit learn you do this by first creating an instance of the regression class. From there, then use the **fit** method from your class instance to fit a model to the training data.
 
 
 ```python
@@ -349,7 +349,7 @@ How many times was the classifier correct for the training set?
 residuals = y_train - y_hat_train
 print(pd.Series(residuals).value_counts())
 print(pd.Series(residuals).value_counts(normalize=True))
-#194 correct, 85% accuracy
+#194 correct, ~ 85% accuracy
 ```
 
      0    194
@@ -370,7 +370,7 @@ print(pd.Series(residuals).value_counts(normalize=True))
 residuals = y_test - y_hat_test
 print(pd.Series(residuals).value_counts())
 print(pd.Series(residuals).value_counts(normalize=True))
-#63 correct, 83% accuracy
+#62 correct, ~ 82% accuracy
 ```
 
      0    62
