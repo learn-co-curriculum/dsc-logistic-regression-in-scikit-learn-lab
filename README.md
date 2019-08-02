@@ -1,5 +1,5 @@
 
-# Logistic Regression in sci-kit learn - Lab
+# Logistic Regression in SciKit Learn - Lab
 
 ## Introduction 
 
@@ -9,7 +9,8 @@ In this lab, you are going to fit a logistic regression model to a dataset conce
 You will be able to:
 
 * Implement logistic regression in sci-kit learn
-* Form conclusions about the performance of a model 
+* Form conclusions about the performance of a model
+
 
 ## Let's get started!
 
@@ -162,7 +163,6 @@ Recall the dataset is whether or not a patient has heart disease and is indicate
 
 
 ```python
-#Your code here 
 X = df[df.columns[:-1]]
 y = df.target
 ```
@@ -304,18 +304,17 @@ Split the data into train and test sets.
 
 
 ```python
-#Your code here
 # Split the data into a training set and a test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 ```
 
 ## Fit a model
-Fit an initial model to the training set. In sci-kit learn you do this by first creating an instance of the regression class. From there, then use the **fit** method from your class instance to fit a model to the training data.
+Fit an initial model to the training set. In sci-kit learn you do this by first creating an instance of the regression class. From there, then use the fit method from your class instance to fit a model to the training data.
 
 
 ```python
 logreg = LogisticRegression(fit_intercept = False, C = 1e12) #Starter code
-#Your code here
+# Your code here
 model_log = logreg.fit(X_train, y_train)
 model_log
 ```
@@ -345,7 +344,7 @@ How many times was the classifier correct for the training set?
 
 
 ```python
-#We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
+# We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
 residuals = y_train - y_hat_train
 print(pd.Series(residuals).value_counts())
 print(pd.Series(residuals).value_counts(normalize=True))
@@ -366,7 +365,7 @@ print(pd.Series(residuals).value_counts(normalize=True))
 
 
 ```python
-#We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
+# We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
 residuals = y_test - y_hat_test
 print(pd.Series(residuals).value_counts())
 print(pd.Series(residuals).value_counts(normalize=True))
@@ -386,7 +385,14 @@ print(pd.Series(residuals).value_counts(normalize=True))
 ## Analysis
 Describe how well you think this initial model is performing based on the train and test performance. Within your description, make note of how you evaluated performance as compared to your previous work with regression.
 
-Answers will vary. In this instance, our model has 85% accuracy on the train set and 83% on the test set. You can also see that our model has a reasonably even number of False Positives and False Negatives, with slightly more False Positives for both the training and testing validations.
+
+```python
+"""
+Answers will vary. In this instance, our model has 85% accuracy on the train set and 83% on the test set. 
+You can also see that our model has a reasonably even number of False Positives and False Negatives, 
+with slightly more False Positives for both the training and testing validations.
+"""
+```
 
 ## Summary
 
