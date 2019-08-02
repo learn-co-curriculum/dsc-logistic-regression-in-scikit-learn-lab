@@ -190,7 +190,7 @@ Fit an initial model to the training set. In sci-kit learn you do this by first 
 
 ```python
 logreg = LogisticRegression(fit_intercept = False, C = 1e12) #Starter code
-#Your code here
+# Your code here
 ```
 
 ## Predict
@@ -198,7 +198,7 @@ Generate predictions for the train and test sets. Use the **predict** method fro
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 ## Initial Evaluation
@@ -206,14 +206,14 @@ How many times was the classifier correct for the training set?
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 ## How many times was the classifier correct for the test set?
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 ## Analysis
@@ -221,7 +221,7 @@ Describe how well you think this initial model is performing based on the train 
 
 
 ```python
-#Your answer here
+# Your analysis here
 ```
 
 ## Summary
