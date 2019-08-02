@@ -317,7 +317,6 @@ y =
 
 ```python
 # __SOLUTION__ 
-#Your code here 
 X = df[df.columns[:-1]]
 y = df.target
 ```
@@ -471,7 +470,6 @@ Split the data into train and test sets.
 
 ```python
 # __SOLUTION__ 
-#Your code here
 # Split the data into a training set and a test set
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 ```
@@ -482,14 +480,14 @@ Fit an initial model to the training set. In sci-kit learn you do this by first 
 
 ```python
 logreg = LogisticRegression(fit_intercept = False, C = 1e12) #Starter code
-#Your code here
+# Your code here
 ```
 
 
 ```python
 # __SOLUTION__ 
 logreg = LogisticRegression(fit_intercept = False, C = 1e12) #Starter code
-#Your code here
+# Your code here
 model_log = logreg.fit(X_train, y_train)
 model_log
 ```
@@ -509,7 +507,7 @@ Generate predictions for the train and test sets. Use the **predict** method fro
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 
@@ -525,13 +523,13 @@ How many times was the classifier correct for the training set?
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 
 ```python
 # __SOLUTION__ 
-#We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
+# We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
 residuals = y_train - y_hat_train
 print(pd.Series(residuals).value_counts())
 print(pd.Series(residuals).value_counts(normalize=True))
@@ -552,13 +550,13 @@ print(pd.Series(residuals).value_counts(normalize=True))
 
 
 ```python
-#Your code here
+# Your code here
 ```
 
 
 ```python
 # __SOLUTION__ 
-#We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
+# We could subtract the two columns. If values or equal, difference will be zero. Then count number of zeros.
 residuals = y_test - y_hat_test
 print(pd.Series(residuals).value_counts())
 print(pd.Series(residuals).value_counts(normalize=True))
@@ -580,7 +578,17 @@ Describe how well you think this initial model is performing based on the train 
 
 
 ```python
-#Your answer here
+# Your analysis here
+```
+
+
+```python
+# __SOLUTION__
+"""
+Answers will vary. In this instance, our model has 85% accuracy on the train set and 83% on the test set. 
+You can also see that our model has a reasonably even number of False Positives and False Negatives, 
+with slightly more False Positives for both the training and testing validations.
+"""
 ```
 
 ## Summary
