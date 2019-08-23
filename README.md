@@ -1,5 +1,5 @@
 
-# Logistic Regression in SciKit Learn - Lab
+# Logistic Regression in scikit-learn - Lab
 
 ## Introduction 
 
@@ -8,7 +8,7 @@ In this lab, you are going to fit a logistic regression model to a dataset conce
 ## Objectives
 You will be able to:
 
-* Implement logistic regression in sci-kit learn
+* Implement logistic regression in scikit-learn
 * Form conclusions about the performance of a model
 
 
@@ -185,7 +185,7 @@ Split the data into train and test sets.
 ```
 
 ## Fit a model
-Fit an initial model to the training set. In sci-kit learn you do this by first creating an instance of the regression class. From there, then use the fit method from your class instance to fit a model to the training data.
+Fit an initial model to the training set. In scikit-learn you do this by first creating an instance of the regression class. From there, then use the fit method from your class instance to fit a model to the training data.
 
 
 ```python
