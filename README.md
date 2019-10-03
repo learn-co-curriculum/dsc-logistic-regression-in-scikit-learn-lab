@@ -8,8 +8,8 @@ In this lab, you are going to fit a logistic regression model to a dataset conce
 ## Objectives
 You will be able to:
 
-* Implement logistic regression in scikit-learn
-* Form conclusions about the performance of a model
+- Implement logistic regression in scikit-learn
+- Form conclusions about the performance of a model
 
 
 ## Let's get started!
