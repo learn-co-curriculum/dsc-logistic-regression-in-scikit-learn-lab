@@ -1,4 +1,3 @@
-
 # Logistic Regression in scikit-learn - Lab
 
 ## Introduction 
@@ -43,6 +42,20 @@ y = None
 X = None
 ```
 
+## Train- test split 
+
+- Split the data into training and test sets 
+- Assign 25% to the test set 
+- Set the `random_state` to 0 
+
+N.B. To avoid possible data leakage, it is best to split the data first, and then normalize.
+
+
+```python
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = None
+```
+
 ## Normalize the data 
 
 Normalize the data (`X`) prior to fitting the model. 
@@ -52,18 +65,6 @@ Normalize the data (`X`) prior to fitting the model.
 # Your code here
 X = None
 X.head()
-```
-
-## Train- test split 
-
-- Split the data into training and test sets 
-- Assign 25% to the test set 
-- Set the `random_state` to 0 
-
-
-```python
-# Split the data into training and test sets
-X_train, X_test, y_train, y_test = None
 ```
 
 ## Fit a model
