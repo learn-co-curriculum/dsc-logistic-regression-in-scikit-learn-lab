@@ -1,4 +1,3 @@
-
 # Logistic Regression in scikit-learn - Lab
 
 ## Introduction 
@@ -198,6 +197,27 @@ y = df['target']
 X = df.drop(columns=['target'], axis=1)
 ```
 
+## Train- test split 
+
+- Split the data into training and test sets 
+- Assign 25% to the test set 
+- Set the `random_state` to 0 
+
+N.B. To avoid possible data leakage, it is best to split the data first, and then normalize.
+
+
+```python
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = None
+```
+
+
+```python
+# __SOLUTION__ 
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+```
+
 ## Normalize the data 
 
 Normalize the data (`X`) prior to fitting the model. 
@@ -339,25 +359,6 @@ X.head()
 
 
 
-## Train- test split 
-
-- Split the data into training and test sets 
-- Assign 25% to the test set 
-- Set the `random_state` to 0 
-
-
-```python
-# Split the data into training and test sets
-X_train, X_test, y_train, y_test = None
-```
-
-
-```python
-# __SOLUTION__ 
-# Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
-```
-
 ## Fit a model
 
 - Instantiate `LogisticRegression`
@@ -388,11 +389,7 @@ logreg.fit(X_train, y_train)
 
 
 
-    LogisticRegression(C=1000000000000.0, class_weight=None, dual=False,
-                       fit_intercept=False, intercept_scaling=1, l1_ratio=None,
-                       max_iter=100, multi_class='warn', n_jobs=None, penalty='l2',
-                       random_state=None, solver='liblinear', tol=0.0001, verbose=0,
-                       warm_start=False)
+<style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression(C=1000000000000.0, fit_intercept=False, solver=&#x27;liblinear&#x27;)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression(C=1000000000000.0, fit_intercept=False, solver=&#x27;liblinear&#x27;)</pre></div></div></div></div></div>
 
 
 
@@ -433,13 +430,15 @@ print(pd.Series(residuals).value_counts(normalize=True))
 # 194 correct, ~ 85% accuracy
 ```
 
+    target
     0    194
     1     33
-    Name: target, dtype: int64
+    Name: count, dtype: int64
     ------------------------------------
+    target
     0    0.854626
     1    0.145374
-    Name: target, dtype: float64
+    Name: proportion, dtype: float64
 
 
 ## How many times was the classifier correct on the test set?
@@ -461,13 +460,15 @@ print(pd.Series(residuals).value_counts(normalize=True))
 # 62 correct, ~ 82% accuracy
 ```
 
-    0    62
-    1    14
-    Name: target, dtype: int64
+    target
+    0    63
+    1    13
+    Name: count, dtype: int64
     ------------------------------------
-    0    0.815789
-    1    0.184211
-    Name: target, dtype: float64
+    target
+    0    0.828947
+    1    0.171053
+    Name: proportion, dtype: float64
 
 
 ## Analysis
@@ -482,7 +483,7 @@ Describe how well you think this initial model is performing based on the traini
 ```python
 # __SOLUTION__
 """
-Answers will vary. In this instance, our model has 85% accuracy on the train set and 83% on the test set. 
+Answers will vary. In this instance, our model has 85% accuracy on the train set and 82% on the test set. 
 You can also see that our model has a reasonably even number of False Positives and False Negatives, 
 with slightly more False Positives for both the training and testing validations.
 """
@@ -491,7 +492,7 @@ with slightly more False Positives for both the training and testing validations
 
 
 
-    '\nAnswers will vary. In this instance, our model has 85% accuracy on the train set and 83% on the test set. \nYou can also see that our model has a reasonably even number of False Positives and False Negatives, \nwith slightly more False Positives for both the training and testing validations.\n'
+    '\nAnswers will vary. In this instance, our model has 85% accuracy on the train set and 82% on the test set. \nYou can also see that our model has a reasonably even number of False Positives and False Negatives, \nwith slightly more False Positives for both the training and testing validations.\n'
 
 
 
